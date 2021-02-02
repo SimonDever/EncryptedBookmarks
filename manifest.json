@@ -13,6 +13,9 @@
   "browser_action": {
     "name": "Open bookmarks."
   },
+  "options_ui": {
+    "page": "options.html"
+  }
   "permissions": [
     "contextMenus",
     "storage",
