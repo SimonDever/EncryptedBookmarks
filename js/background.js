@@ -63,9 +63,10 @@ chrome.runtime.onInstalled.addListener(function(details){
     chrome.storage.local.set({bookmarks: {"bookmarks": []}});
 
     var context = "page";
-    chrome.contextMenus.create({"title": "Add to Encrypted Bookmarks", "contexts":[context], "id": "context" + context}); 
+    chrome.contextMenus.create({"title": "Add to bookmarks", "contexts":[context], "id": "context" + context}); 
 
-    chrome.tabs.create({url: "/html/bookmarks.html"});
+    chrome.runtime.openOptionsPage();
+    //chrome.tabs.create({url: "/html/bookmarks.html"});
   }
 });
 
@@ -73,6 +74,9 @@ chrome.runtime.onInstalled.addListener(function(details){
 chrome.contextMenus.onClicked.addListener(userVerify);
 
 /* Open bookmarks page on extension toolbar icon click. */
+/*
 chrome.browserAction.onClicked.addListener(function(){
-  chrome.tabs.create({url: "/html/bookmarks.html"});
+  chrome.runtime.openOptionsPage();
+  //chrome.tabs.create({url: "/html/bookmarks.html"});
 });
+*/
